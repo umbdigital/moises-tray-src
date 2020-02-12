@@ -1,0 +1,11 @@
+<figure class="figure-footer col-xs-12">
+    <img src="{{ asset('img/traco-newsletter.jpg') }}" alt="Traço newsletter Moises art">
+</figure>
+
+<section class="newsletter col-xs-12" data-tray-tst="newsletter_box">
+    <form class="container" action="{{ links.newsletter }}&v=js" method="post" name="newsletter" data-tray-tst="newsletter_form">
+        <label>assine nossa newsletter</label>
+        <input id="news-email" name="email" type="email" placeholder="E-MAIL" data-tray-tst="newsletter_email" required>
+        <button data-tray-tst="newsletter_cadastrar"><figure><img src="{{ asset('img/newsletter-button.png') }}" alt="icon button newsletter Moises art"></figure></button>
+    </form>
+</section>
