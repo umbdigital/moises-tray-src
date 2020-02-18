@@ -872,3 +872,9 @@ footer ul li a:hover {
 		padding-top: 50px;
 	}
 }
+
+/* Produto */
+
+.page-product .product-detail {
+	border: none;
+}
