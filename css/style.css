@@ -42,8 +42,585 @@
 
 /* Body */
 
-.application {
+html body .application {
 	background-color: transparent;
+	transform: inherit !important;
+}
+
+.site-main {
+	padding-left: 215px;
+}
+
+.page-home .page-content {
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.site-main {
+		padding-left: 0;
+	}
+}
+
+/* Header */
+
+.site-logo {
+	padding-top: 10px;
+}
+
+.search .search-button,
+.cart .cart-icon,
+.trigger-menu {
+	background: transparent;
+}
+
+header .customer a,
+header .customer .orders a {
+	font-family: "Franklingothic-Book", sans-serif;
+	color: #9a9a9a;
+	text-transform: lowercase;
+}
+
+header .search .search-button,
+header .trigger-menu,
+header .cart .cart-icon,
+header .cart,
+header .search,
+header .search form {
+	height: 30px;
+	padding: 0;
+	margin: 0;
+}
+
+header .cart .cart-icon svg {
+	top: 2px;
+	position: relative;
+}
+
+header .wrapper-nav {
+	margin: 0;
+	padding: 15px 0;
+}
+
+.search input.search-key {
+	padding: 10px 20px;
+	height: 30px;
+	border: none;
+	font-family: "Franklingothic-Book", sans-serif;
+	color: #9a9a9a;
+	font-size: 12px;
+}
+
+header {
+	position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    transition: all .3s ease 0s;
+    -ms-transition: all .3s ease 0s;
+    -webkit-transition: all .3s ease 0s;
+    display: block;
+}
+
+header .header-mobile {
+	display: none;
+}
+
+header .header-left {
+	width: 215px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.15);
+}
+
+header .header-left .show-main-menu {
+	position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+header .header-left .header-block {
+	position: absolute;
+    bottom: 45px;
+    left: 0;
+    width: 100%;
+}
+
+header .header-left .header-block .item-header-block {
+	position: relative;
+	clear: both;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 5px 0;
+}
+
+header .header-left .header-block .item-header-block .search-button svg {
+	width: 20px;
+	height: 20px;
+}
+
+header .header-left .header-block .item-header-block svg {
+	height: 25px;
+	width: 25px;
+}
+
+header .header-left .header-block .item-header-block button {
+	border: none;
+	background: transparent;
+	padding: 0;
+}
+
+header .header-left .header-block .item-header-block .cart-info {
+	background: transparent;
+	border: none;
+	padding: 0;
+	position: relative;
+}
+
+header .header-left .header-block .item-header-block .cart-icon {
+	width: 25px;
+	height: auto;
+	margin-left: 20px;
+}
+
+header .header-left .header-block .item-header-block .cart-info span {
+    background: red;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    line-height: 0px;
+    font-weight: 700;
+    font-family: "Franklingothic-Book", sans-serif;
+}
+
+header .header-left .header-block .item-header-block .search-button {
+	padding: 0;
+	border: none;
+	background: transparent;
+}
+
+header .header-left .header-block .item-header-block:nth-child(3) span {
+	position: absolute;
+	font-family: "Franklingothic-Book", sans-serif;
+	letter-spacing: 1px;
+}
+
+header .header-left .show-main-menu .nav-toggle {
+	display:block;
+	width:26px;
+	height:22px;
+	position:relative;
+	margin:0;
+	-webkit-transform:rotate(0deg);
+	-moz-transform:rotate(0deg);
+	-o-transform:rotate(0deg);
+	transform:rotate(0deg);
+	-webkit-transition:.5s ease-in-out;
+	-moz-transition:.5s ease-in-out;
+	-o-transition:.5s ease-in-out;
+	transition:.5s ease-in-out;
+	cursor:pointer;
+	left:0;
+	top:2px;
+	margin:0 auto
+}
+
+header .header-left .show-main-menu .nav-toggle:before {
+	display:none
+}
+
+header .header-left .show-main-menu .nav-toggle>span {
+	display:block;
+	position:absolute;
+	height:2px;
+	width:100%;
+	background:#000;
+	border-radius:2px;
+	opacity:1;
+	left:0;
+	-webkit-transform:rotate(0deg);
+	-moz-transform:rotate(0deg);
+	-o-transform:rotate(0deg);
+	transform:rotate(0deg);
+	-webkit-transition:.25s ease-in-out;
+	-moz-transition:.25s ease-in-out;
+	-o-transition:.25s ease-in-out;
+	transition:.25s ease-in-out;
+	clip:auto;
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle,
+.nav-open .nav-toggle,
+.nav-open .show-main-menu .nav-toggle {
+	top:-8px;
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle span:first-child,
+.nav-open .nav-toggle span:first-child,
+.nav-open .show-main-menu .nav-toggle span:first-child {
+	top:18px;
+	-webkit-transform:rotate(135deg);
+	-moz-transform:rotate(135deg);
+	-o-transform:rotate(135deg);
+	transform:rotate(135deg);
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle span:nth-child(2),
+.nav-open .nav-toggle span:nth-child(2),
+.nav-open .show-main-menu .nav-toggle span:nth-child(2) {
+	opacity:0;
+	left:-60px;
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle span:nth-child(3),
+.nav-open .nav-toggle span:nth-child(3),
+.nav-open .show-main-menu .nav-toggle span:nth-child(3) {
+	top: .9px !important;
+    left: -.5px;
+	-webkit-transform:rotate(-135deg);
+	-moz-transform:rotate(-135deg);
+	-o-transform:rotate(-135deg);
+	transform:rotate(-135deg);
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .header-menu .nav-toggle,
+.nav-open .header-menu .nav-toggle {
+	top:-1px;
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle span:first-child,
+.nav-open .nav-toggle span:first-child {
+	top:18px;
+	-webkit-transform:rotate(135deg);
+	-moz-transform:rotate(135deg);
+	-o-transform:rotate(135deg);
+	transform:rotate(135deg);
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle span:nth-child(2),
+.nav-open .nav-toggle span:nth-child(2) {
+	opacity:0;
+	left:-60px;
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle span:nth-child(3),
+.nav-open .nav-toggle span:nth-child(3) {
+	top: .9px !important;
+    left: -.5px;
+	-webkit-transform:rotate(-135deg);
+	-moz-transform:rotate(-135deg);
+	-o-transform:rotate(-135deg);
+	transform:rotate(-135deg);
+	transition:all .3s ease 0s;
+	-ms-transition:all .3s ease 0s;
+	-webkit-transition:all .3s ease 0s
+}
+
+.nav-open .nav-toggle:after,
+.nav-open .nav-toggle:after {
+	display:none
+}
+
+header .header-left .show-main-menu .nav-toggle span:nth-child(1) {
+	top:0
+}
+
+header .header-left .show-main-menu .nav-toggle span:nth-child(2) {
+	top:8px
+}
+
+header .header-left .show-main-menu .nav-toggle span:nth-child(3) {
+	top:16px
+}
+
+.nav-open .header-menu,
+.header-search.open {
+	-webkit-transform:scale(1);
+	-ms-transform:scale(1);
+	-o-transform:scale(1);
+	transform:scale(1);
+	opacity:1;
+	visibility:visible;
+    -webkit-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+}
+
+header .header-menu,
+header .header-search {
+    top: 0;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    z-index: 9;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    visibility: hidden;
+    -webkit-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+    position: fixed;
+    left: 215px;
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+    background: #f8f8f8;
+    z-index: 12;
+    height: 100%;
+    width: 320px;
+}
+
+header .header-search {
+	z-index: 8;
+}
+
+header .header-menu li {
+	padding: 15px 0;
+}
+
+header .header-menu li a {
+	font-family: "Franklingothic-Book", sans-serif;
+	font-size: 17px;
+	font-style: normal;
+	color: #585858;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+header .header-menu li a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+header #button-close-content-search {
+	width: 44px;
+    height: 44px;
+    background: #6a6a6a;
+    display: block;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    fill: #fff;
+    border: 11px solid #6a6a6a;
+}
+
+header #content-search form {
+	background: transparent;
+}
+
+header #content-search .search-key {
+	height: 48px;
+    line-height: 48px;
+    border: none;
+    color: #7a7a7a;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    transition: all .3s ease 0s;
+    -ms-transition: all .3s ease 0s;
+    -webkit-transition: all .3s ease 0s;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 15px;
+    background: transparent;
+    border-bottom: 1px solid #ddd;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-transform: lowercase;
+    font-family: "Franklingothic-Book", sans-serif;
+    outline: none;
+}
+
+.site-logo:before {
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+	header {
+		position: sticky;
+		top: -154px;
+		z-index: 9;
+	}
+	header .header-mobile {
+		display: block;
+	}
+	.header-left,
+	header .header-menu {
+		display: none;
+	}
+}
+
+/* Menu Mobile */
+
+html.menu-open .menu-mobile-backdrop {
+	background: transparent;
+}
+
+.menu-mobile {
+	background: #efefef;
+}
+
+.menu-mobile .link-level1, .menu-mobile .link-level2, .menu-mobile .link-level3 {
+	color: #6a6a6a;
+	font-size: 11px;
+	font-family: "Franklingothic-Book", sans-serif;
+	text-transform: lowercase;
+}
+
+.menu-mobile>h5 {
+	color: #6a6a6a;
+	font-size: 14px;
+	font-family: "Franklingothic-Book", sans-serif;
+	text-transform: lowercase;
+	padding-top: 20px;
+}
+
+.menu-mobile .item-level1 {
+	border: none;
+}
+
+.menu-mobile>h5:after {
+	display: none;
+}
+
+.menu-mobile .level1 {
+	overflow-y: auto;
+}
+
+/* Home page */
+
+.banner-principal {
+	display: flex;
+	justify-content: center;
+	background: #efefef;
+}
+
+.figure-categoria-home,
+.page-content .figure-categoria-home {
+	padding: 40px 0 50px 0;
+}
+
+.figure-categoria-home .figure {
+	padding: 50px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.figure-categoria-home .figure-right {
+	position: relative;
+	top: -145px;
+}
+
+.figure-categoria-home a {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 70%
+}
+
+.figure-categoria-home a:hover {
+	text-decoration: none;
+}
+
+.figure-categoria-home figure img {
+	width: auto;
+	height: auto;
+}
+
+.figure-categoria-home figure figcaption {
+	font-family: "Franklingothic-Book", sans-serif;
+	font-size: 20px;
+	clear: both;
+	display: block;
+	color: #252525;
+	letter-spacing: 1.2px;
+	text-transform: lowercase;
+	margin-top: 60px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.figure-categoria-home,
+	.page-content .figure-categoria-home {
+		padding-top: 50px;
+		padding-bottom: 15px;
+	}
+	.figure-categoria-home a {
+		max-width: 80%;
+	}
+	.figure-categoria-home .figure {
+		padding: 25px 0;
+	}
+	.figure-categoria-home .figure-right {
+		top: -45px;
+	}
+	.figure-categoria-home figure figcaption {
+		margin-top: 20px;
+		font-size: 14px;
+	}
 }
 
 /* newsletter */
@@ -66,7 +643,7 @@
 .newsletter form label {
 	font-family: "Franklingothic-Book", sans-serif;
 	text-transform: lowercase;
-	font-size: 20px;
+	font-size: 18px;
 	color: #6a6a6a;
 	letter-spacing: 1px;
 }
@@ -84,6 +661,7 @@
 	letter-spacing: 1.5px;
 	font-family: Montserrat, sans-serif;
 	font-weight: 600;
+	text-transform: lowercase;
 }
 
 .newsletter form button {
@@ -106,6 +684,32 @@
 	margin: 0 15px;
 }
 
+@media only screen and (max-width: 768px) {
+	.newsletter form {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.newsletter form label {
+		font-size: 16px;
+	}
+	.newsletter form #news-email {
+		font-size: 10px;
+		max-width: calc(100% - 30px);
+	}
+	.newsletter form button img {
+		height: 20px;
+	}
+	.newsletter form label,
+	.newsletter form #news-email,
+	.newsletter form button {
+		margin: 5px 10px;
+	}
+	.newsletter {
+		padding: 20px 0;
+	}
+}
+
 /* Footer */
 
 footer {
@@ -126,7 +730,7 @@ footer ul li.div {
 
 footer ul li a,
 footer ul li span {
-	color: #b5b5b5;
+	color: #8a8a8a;
 	font-size: 17px;
 	text-transform: lowercase;
 	font-family: "Franklingothic-Book", sans-serif;
@@ -142,4 +746,129 @@ footer ul li a:hover {
 	justify-content: center;
 	background: #fff;
 	padding: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+	footer {
+		padding: 30px 0 50px 0;
+		display: flex;
+	}
+	footer ul {
+		flex-direction: column;
+		align-items: baseline;
+	}
+	footer ul li {
+		margin-bottom: 8px;
+	}
+	footer ul li a {
+		font-size: 14px;
+	}
+	footer ul li.div {
+		display: none;
+	}
+	.figure-footer img {
+		max-width: calc(100% - 30px);
+		height: 3px;
+	}
+}
+
+/* Catalog */
+
+.page-catalog .catalog-empty p, .page-search .catalog-empty p {
+	font-family: "Franklingothic-Book", sans-serif;
+}
+
+.page-catalog .catalog-header, .page-search .catalog-header {
+	border: none;
+	padding: 30px 0;	
+}
+
+.page-catalog .catalog-header .catalog-name, .page-search .catalog-header .catalog-name {
+	font-family: "Franklingothic-Demi", sans-serif;
+	font-size: 27px;
+	color: #313030;
+	letter-spacing: 3px;	
+}
+
+.page-catalog .news-full-newsletter {
+	display: none;
+}
+
+.product .product-price {
+	font-family: "Franklingothic-Demi", sans-serif;
+	font-size: 16px;
+	color: #1a1a1a;
+	text-align: center;
+	display: block;
+	height: auto;
+	margin-bottom: 5px;
+}
+
+.product .product-payment span, .product .product-payment strong, .product .product-payment {
+	font-family: "Franklingothic-Book", sans-serif;
+	font-size: 12px;
+	color: #6a6a6a;
+	line-height: 1;
+	text-align: center;
+}
+
+.product .product-name {
+	font-family: "Franklingothic-Demi", sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	color: #6a6a6a;
+	text-transform: lowercase;
+	text-align: center;
+	height: auto;
+	margin-bottom: 5px;
+}
+
+.product .product-image:before {
+	display: none;
+}
+
+.page-catalog .pagination {
+	border: none;
+}
+
+.product {
+	border: none;
+	transition: all .4s ease;
+}
+
+.product:hover {
+	box-shadow: 0px 0 5px 4px rgba(0,0,0,.1);
+	transition: all .4s ease;
+}
+
+.product .product-image {
+	height: 300px;
+	border: none;
+	max-height: 300px;
+}
+
+.product .product-image img {
+	max-width: 100%;
+}
+
+.product {
+	padding: 60px;
+}
+
+.page-catalog .system-filter .filtros, .page-search .system-filter .filtros, .page-catalog .catalogo-pages, .page-catalog .pagination, .page-search .catalogo-pages, .page-search .pagination {
+	font-family: "Franklingothic-Book", sans-serif;
+}
+
+.page-catalog footer {
+	padding-top: 150px;
+	display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+	.product {
+		padding: 30px;
+	}
+	.page-catalog footer {
+		padding-top: 50px;
+	}
 }

@@ -1,14 +1,12 @@
 <header>
-    <div class="container">
-        <div class="row">
+    <div class="container header-mobile">
+        <div class="col-xs-12">
             <div class="col-sm-3 col-xs-12">
-            {% if pages.current == 'home' %}
-                <h1 class="site-logo" alt="{{ store.name }}">
-                    <a href="{{ links.home }}" data-tray-tst="logotipo_loja">{{ Image('logo') }}</a>
-                </h1>
-            {% else %}
-                <a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja">{{ Image('logo') }}</a>
-            {% endif %}
+                <a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja">
+                    <figure>
+                        <img src="{{ asset('img/logo.png') }}" alt="{{ store.name }}" data-tray-tst="logotipo_loja">
+                    </figure>
+                </a>
             </div>
             
             <div class="col-sm-9 col-xs-12">
@@ -34,7 +32,7 @@
             <div class="wrapper-nav clearfix visible-xs-block">
                 <div class="col-xs-2">
                     <button class="trigger-menu">
-                        <img src="{{ asset('img/menu.svg') }}" alt="Menu">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" width="25" height="25" xml:space="preserve"> <g><g><path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z"/></g></g><g><g><path d="M492,76H20C8.954,76,0,84.954,0,96s8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,76,492,76z"/></g></g><g><g><path d="M492,396H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20 C512,404.954,503.046,396,492,396z"/></g></g></svg>
                     </button>
                 </div>
                 <div class="col-xs-8">
@@ -43,6 +41,114 @@
                 <div class="col-xs-2 wrapp-cart">
                     {% element 'snippets/cart' %}
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-left">
+        <div class="header-logo">
+            <a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja"><figure>{{ Image('logo') }}</figure></a>
+        </div>
+        <div class="show-main-menu">
+            <div class="action nav-toggle" id="menu-nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header-block">
+            <div class="item-header-block">
+                <a href="{{ links.cart }}" class="cart clearfix" data-tray-tst="link_qtde_carrinho">
+                    <i class="cart-icon pull-left">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; fill: #000" xml:space="preserve"><g><g><path d="M447.988,139.696c-0.156-2.084-1.9-3.696-3.988-3.696h-72v-20C372,52.036,319.96,0,256,0S140,52.036,140,116v20H68 c-2.088,0-3.832,1.612-3.988,3.696l-28,368c-0.084,1.108,0.296,2.204,1.056,3.02C37.824,511.536,38.888,512,40,512h432 c1.112,0,2.176-0.464,2.932-1.28c0.756-0.816,1.14-1.912,1.056-3.02L447.988,139.696z M172,116c0-46.316,37.68-84,84-84 s84,37.684,84,84v20H172V116z M156,248c-22.06,0-40-17.944-40-40c0-15.964,8-30.348,24-36.66V208c0,8.824,7.18,16,16,16 s16-7.176,16-16v-36.636c16,6.312,24,20.804,24,36.636C196,230.056,178.06,248,156,248z M356,248c-22.06,0-40-17.944-40-40 c0-15.964,8-30.348,24-36.66V208c0,8.824,7.18,16,16,16s16-7.176,16-16v-36.636c16,6.312,24,20.804,24,36.636 C396,230.056,378.06,248,356,248z"/></g></g></svg>
+                    </i>
+                    <div class="cart-info hidden-xs">
+                        <div class="cart-amount">
+                            <span data-cart="amount" data-tray-tst="carrinho_qtde">{{ cart.amount }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item-header-block" id="button-search">
+                <button class="search-button pull-right" type="submit" tabindex="2" data-tray-tst="botao_buscar">
+                    <svg fill="#000" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 425.2 425.199"><path d="M414.792 364.542l-92.371-92.37c-.49-.491-1.066-.834-1.58-1.291 18.176-27.571 28.785-60.575 28.785-96.067C349.624 78.267 271.358 0 174.812 0 78.267 0 0 78.267 0 174.812s78.265 174.813 174.811 174.813c35.494 0 68.496-10.608 96.067-28.784.457.512.799 1.088 1.289 1.578l92.375 92.374c13.875 13.875 36.373 13.875 50.25 0 13.875-13.877 13.875-36.375 0-50.251zm-239.98-75.519c-63.078 0-114.212-51.134-114.212-114.211C60.6 111.734 111.735 60.6 174.812 60.6c63.075 0 114.21 51.136 114.21 114.212 0 63.077-51.135 114.211-114.21 114.211z"/></svg>
+                </button>
+            </div>
+            <div class="item-header-block" data-tray-tst="saudacao">
+                <a class="tray-hide" data-logged-user="true" href="{{ links.logout }}">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19.738 19.738" style="enable-background:new 0 0 19.738 19.738;" xml:space="preserve"><g><path style="fill:#010002;" d="M18.18,19.738h-2c0-3.374-2.83-6.118-6.311-6.118s-6.31,2.745-6.31,6.118h-2 c0-4.478,3.729-8.118,8.311-8.118C14.451,11.62,18.18,15.26,18.18,19.738z"/><path style="fill:#010002;" d="M9.87,10.97c-3.023,0-5.484-2.462-5.484-5.485C4.385,2.461,6.846,0,9.87,0 c3.025,0,5.486,2.46,5.486,5.485S12.895,10.97,9.87,10.97z M9.87,2C7.948,2,6.385,3.563,6.385,5.485S7.948,8.97,9.87,8.97 c1.923,0,3.486-1.563,3.486-3.485S11.791,2,9.87,2z"/></g></svg><span>{{ Translation('sair') }}</span>
+                </a>
+                <a class="tray-hide" data-logged-user="false" href="{{ links.login }}" data-tray-tst="login">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19.738 19.738" style="enable-background:new 0 0 19.738 19.738;" xml:space="preserve"><g><path style="fill:#010002;" d="M18.18,19.738h-2c0-3.374-2.83-6.118-6.311-6.118s-6.31,2.745-6.31,6.118h-2 c0-4.478,3.729-8.118,8.311-8.118C14.451,11.62,18.18,15.26,18.18,19.738z"/><path style="fill:#010002;" d="M9.87,10.97c-3.023,0-5.484-2.462-5.484-5.485C4.385,2.461,6.846,0,9.87,0 c3.025,0,5.486,2.46,5.486,5.485S12.895,10.97,9.87,10.97z M9.87,2C7.948,2,6.385,3.563,6.385,5.485S7.948,8.97,9.87,8.97 c1.923,0,3.486-1.563,3.486-3.485S11.791,2,9.87,2z"/></g></svg><span>{{ Translation('login') }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-menu">
+        <div class="nav-sections">
+            <div class="nav-sections-items">
+                <nav>
+                    <ul class="categories-mobile level1">
+                        <li class="item-level1">
+                            <a href="{{ links.home }}" class="link-level1" data-tray-tst="categoria_lvl_1">home</a>
+                        </li>
+                        {% for level1 in categories %}
+                            {% if loop.index <= limit or not limit %}
+                                <li class="item-level1">
+                                    {% if level1.children %}
+                                    <input type="checkbox" id="item-{{ level1.id }}" class="level1-check"/>
+                                    <label class="link-level1" for="mobile-item-{{ level1.id }}" data-tray-tst="categoria_lvl_1">
+                                        <i class="pull-right arrow-menu-mobile"><img src="{{ asset('img/arrow-right.svg') }}" height="16" width="16" alt="Seta"></i>
+                                        {{ level1.name }}
+                                    </label>
+                                    {% else %}
+                                    <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                                    {% endif %}
+                                    
+                                    {% if level1.children %}
+                                        <div class="level2">
+                                            <ul>
+                                                {% for level2 in level1.children %}
+                                                    <li class="item-level2">
+                                                        <a href="{{ level2.link }}" class="link-level2" data-tray-tst="categoria_lvl_2">{{ level2.name }}</a>
+                                                        {% if level2.children %}
+                                                            <div class="level3">
+                                                                <ul>
+                                                                    {% for level3 in level2.children %}
+                                                                        <li class="item-level3">
+                                                                            <a href="{{ level3.link }}" class="link-level3" data-tray-tst="categoria_lvl_3">{{ level3.name }}</a>
+                                                                            {% if level3.children %}
+                                                                            {% endif %}
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </div>
+                                                        {% endif %}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="header-search" id="content-search">
+        <div class="content-block">
+            <div class="search">
+                <svg id="button-close-content-search" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g><path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285 L284.286,256.002z"/></g></g></svg>
+                <form role="form" action="{{ links.search }}" method="get" data-search="suggestion">
+                    <input type="hidden" name="loja" value="{{ store.id }}">
+                    <button class="search-button pull-right" type="submit" tabindex="2" data-tray-tst="botao_buscar">
+                        <svg fill="#6a6a6a" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 425.2 425.199"><path d="M414.792 364.542l-92.371-92.37c-.49-.491-1.066-.834-1.58-1.291 18.176-27.571 28.785-60.575 28.785-96.067C349.624 78.267 271.358 0 174.812 0 78.267 0 0 78.267 0 174.812s78.265 174.813 174.811 174.813c35.494 0 68.496-10.608 96.067-28.784.457.512.799 1.088 1.289 1.578l92.375 92.374c13.875 13.875 36.373 13.875 50.25 0 13.875-13.877 13.875-36.375 0-50.251zm-239.98-75.519c-63.078 0-114.212-51.134-114.212-114.211C60.6 111.734 111.735 60.6 174.812 60.6c63.075 0 114.21 51.136 114.21 114.212 0 63.077-51.135 114.211-114.21 114.211z"/></svg>
+                    </button>
+                    <div>
+                        <input class="search-key" type="text" data-input="suggestion" placeholder="{{ Translation('buscar') }}" name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

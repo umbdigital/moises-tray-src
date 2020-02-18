@@ -15,13 +15,21 @@
     {% element 'snippets/schema-product' %}
     <div class="clearfix">
 
-        {% element 'snippets/breadcrumb' { "class": 'breadcrumb'} %}
-
         <div class="col-md-6 product-colum-left">
 
             {% if product.images %}
                 <div id="visualBlock" class="product-gallery {{ product.images|length  <= 1 and not product.video ? 'hide-carousel' }}">
-                    {{ productHelper.gallery() }}
+                    <div class="product-image">
+                    {% if product.images %}
+                        {% if utils.is_mobile %}
+                            <img itemprop="image" src="{{ product.images[0].full }}" alt="{{ product.name }}" title="{{ product.name }}">
+                        {% else %}
+                            <img itemprop="image"  data-original="{{ product.images[0].full }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}" title="{{ product.name }}">
+                        {% endif %}
+                    {% else %}
+                        <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
+                    {% endif %}
+                    </div>
                 </div>
             {% else %}
                 <div class="product-gallery no-image">
@@ -35,32 +43,6 @@
 				</div>
 			{% endif %}
 
-            <div class="product-labels">
-                {{ productHelper.labels() }}
-            </div>
-
-            <ul class="product-links">
-                <li class="product-links-item">
-                    <a class="botao_indique_amigo" data-url="{{ links.product_recommend }}&IdProd={{ product.id }}" data-title="{{ product.name }}" data-toggle="modal" data-target="#modal-form" data-modal-width="600px" href="#">{{ Translation('indique_amigo') }}</a>
-                </li>
-
-                <li class="product-links-item">
-                    <a class="botao_tire_duvidas" data-url="{{ links.product_question }}&IdProd={{ product.id }}" data-title="{{ product.name }}" data-toggle="modal" data-target="#modal-form" data-modal-width="600px" href="#">{{ Translation('tire_duvidas') }}</a>
-                </li>
-
-                <li class="product-links-item">
-                    <span class="product-compare" id="product-compare">
-                    {% if settings.compare %}
-                        <span id="comparar">
-                            {% element 'product/compare' {
-                                'product': product,
-                                'links': links
-                            } %}
-                        </span>
-                    {% endif %}
-                    </span>
-                </li>
-            </ul>
         </div>
 
         <div class="col-md-6 product-colum-right">
@@ -172,43 +154,6 @@
     </div>
     <div data-app="product.payment-methods" id="formasPagto" class="prodBox"  ></div>
 </section>
-
-{% if productHelper.bundle() %}
-<section class="product-cross-sell">
-    <h4>{{ Translation('confira_tambem') }}</h4>
-    <h3>{{ Translation('compre_junto') }}</h3>
-    {{ productHelper.bundle() }}
-</section>
-{% endif %}
-
-
-{% if product.related_products %}
-<div id="prognoos_lsi"></div>
-<section class="products-related">
-    <h4>{{ Translation('confira_tambem') }}</h4>
-    <h3 class="related-title">{{ Translation('produtos_relacionados') }}</h3>
-    <div class="row">
-        {% for related in product.related_products %}
-            <div class="col-sm-3">
-                {% element 'snippets/product' {"product": related} %}
-            </div>
-        {% endfor %}
-    </div>
-</section>
-{% endif %}
-
-<div id="prognoos_ib"></div>
-{% if settings.history_position == 1 %}
-    <section class="products-visited col-sm-12">
-        <h4>{{ Translation('confira_tambem') }}</h4>
-        <h3 class="related-title">{{ Translation('produtos_visitados') }}</h3>
-        {% element 'snippets/history' {
-            'store.id': store.id,
-            'pages.current': pages.current,
-            'category.id': category.id
-        } %}
-    </section>
-{% endif %}
 
 {% if banner.bottom %}
     <div class="banner banner-bottom ">

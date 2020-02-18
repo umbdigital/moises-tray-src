@@ -3,9 +3,9 @@
         <div class="product-image">
             {% if product.images %}
                 {% if utils.is_mobile %}
-                    <img itemprop="image" src="{{ product.images[0].large }}" alt="{{ product.name }}" title="{{ product.name }}">
+                    <img itemprop="image" src="{{ product.images[0].full }}" alt="{{ product.name }}" title="{{ product.name }}">
                 {% else %}
-                    <img itemprop="image"  data-original="{{ product.images[0].large }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}" title="{{ product.name }}">
+                    <img itemprop="image"  data-original="{{ product.images[0].full }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}" title="{{ product.name }}">
                 {% endif %}
             {% else %}
                 <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
