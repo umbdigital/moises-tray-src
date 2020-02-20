@@ -447,9 +447,9 @@ header .header-menu li a:hover {
 }
 
 header #button-close-content-search {
-	width: 44px;
-    height: 44px;
-    background: #6a6a6a;
+	width: 24px;
+    height: 24px;
+    background: transparent;
     display: block;
     border-radius: 50%;
     cursor: pointer;
@@ -461,8 +461,7 @@ header #button-close-content-search {
     -ms-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    fill: #fff;
-    border: 11px solid #6a6a6a;
+    fill: #6a6a6a;
 }
 
 header #content-search form {
@@ -989,6 +988,11 @@ footer ul li a:hover {
 	padding-top: 5vh
 }
 
+.page-product #button-buy img {
+	max-width: 80%;
+	float: left;
+}
+
 
 /* Páginas Institucionas */
 
@@ -1002,6 +1006,10 @@ footer ul li a:hover {
 	padding-top: 10vh;
 }
 
+.page-home .page-content .container.page-custom {
+	padding-top: 0;
+}
+
 .page-content .container.page-custom > h1:first-child {
 	margin-bottom: 5vh;
 	text-transform: lowercase;
@@ -1010,4 +1018,5 @@ footer ul li a:hover {
 
 .page-content .container.page-custom .board_htm {
 	letter-spacing: 1px;
+	max-width: 600px;
 }
