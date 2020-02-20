@@ -18,27 +18,28 @@
         <div class="col-md-6 product-colum-left">
 
             {% if product.images %}
-                <div id="visualBlock" class="product-gallery {{ product.images|length  <= 1 and not product.video ? 'hide-carousel' }}">
+                <!-- <div id="visualBlock" class="product-gallery"> -->
+                <div id="product-gallery" class="product-gallery">
                     <div class="product-image">
-                    {% if product.images %}
+                        <figure>
                         {% if utils.is_mobile %}
                             <img itemprop="image" src="{{ product.images[0].full }}" alt="{{ product.name }}" title="{{ product.name }}">
                         {% else %}
                             <img itemprop="image"  data-original="{{ product.images[0].full }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}" title="{{ product.name }}">
                         {% endif %}
-                    {% else %}
-                        <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
-                    {% endif %}
+                        </figure>
                     </div>
                 </div>
             {% else %}
                 <div class="product-gallery no-image">
-                    <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada">
+                    <figure>
+                        <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" title="Nenhuma imagem foi cadastrada">
+                    </figure>
                 </div>
             {% endif %}
 
 			{% if settings.social_position == 0 %}
-				<div class="product-social sidepicture">
+				<div class="product-social sidepicture hidden">
 					{{ productHelper.social() }}
 				</div>
 			{% endif %}
@@ -58,14 +59,31 @@
             {% endif %}
             {% endfor %}
 
-            <p class="product-details">
+            <p class="product-details hidden">
                 {% if settings.show_product_stock %}
                     <span>Estoque: <b>{{ product.stock }}</b></span>
                 {% endif %}
                 {{ productHelper.details() }}
                 {{ productHelper.icons() }}
             </p>
-            {{ productHelper.bonus() }}
+
+            <p class="product-details">
+                <span class="dados-campo infoModelo">Código:</span>
+                <strong class="dados-valor">123</strong>
+            </p>
+
+            <div id="descricao" class="prodBox">
+                <div class="board">
+                    <div class="board_htm description">
+                        {{ product.description ? product.description : product.description_small }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden">
+                {{ productHelper.bonus() }}
+            </div>
+
             <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
                 
                 {% if settings.cache_infopreco %}
@@ -81,6 +99,11 @@
                 {{ productHelper.variants() }}
                 {{ productHelper.gifts() }}
                 {{ product.additional_information }}
+
+                <p class="product-details">
+                    <strong class="Medidas">Medidas: P (21x29,7cm) | M (29,7cmx42cm) | G (41x59,4cm)</strong>
+                </p>
+
                 <div>
                 {{ productHelper.form() }}
                 </div>
@@ -88,7 +111,10 @@
                 {% if not product.upon_request and product.available %}
                     {{ productHelper.wishlist() }}
                 {% endif %}
-                {{ productHelper.shipping() }}
+
+                <div class="hidden">
+                    {{ productHelper.shipping() }}
+                </div>
 
                 {% if product.additional_message %}
                 <div class="additional-message">
@@ -106,7 +132,7 @@
     </div>
 </section>
 
-<section id="ProdBlock" class="product-tabs">
+<section id="ProdBlock" class="product-tabs hidden">
     <a name="formaPagto"></a>
     <div id="ProdAbas" class="abasProduto tab-panel">
         <ul class="clearfix">
@@ -118,14 +144,6 @@
               {% endif %}
             {% endfor %}
         </ul>
-    </div>
-
-    <div id="descricao" class="prodBox">
-        <div class="board">
-            <div class="board_htm description">
-                {{ product.description ? product.description : product.description_small }}
-            </div>
-        </div>
     </div>
 
     <div id="itensInclusos" class="prodBox">

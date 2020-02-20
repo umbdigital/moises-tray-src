@@ -864,6 +864,25 @@ footer ul li a:hover {
 	display: flex;
 }
 
+.page-catalog .shop-now {
+	height: 50px;
+	width: 100%;
+	background: #797979;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 0px;
+	opacity: 0;
+	transition: all .7s ease;
+}
+
+.product:hover .shop-now {
+	opacity: 1;
+	transition: all .5s ease;
+}
+
 @media only screen and (max-width: 768px) {
 	.product {
 		padding: 30px;
@@ -877,4 +896,118 @@ footer ul li a:hover {
 
 .page-product .product-detail {
 	border: none;
+}
+
+.page-product .product-name {
+	font-family: "Franklingothic-Demi", sans-serif;
+	font-size: 20px;
+	color: #2f2f2f;
+	letter-spacing: 2px;
+	line-height: 1;
+	text-transform: lowercase;
+}
+
+.page-product .product-details {
+	font-family: "Franklingothic-Book", sans-serif;
+	font-size: 13px;
+	color: #2f2f2f;
+}
+
+.prodBox .board_htm p {
+	font-size: 12px;
+	color: #2f2f2f;
+	font-family: "Franklingothic-Book", sans-serif;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	margin-bottom: 16px;
+}
+
+.page-product .product-tabs {
+	display: none !important;
+}
+
+.page-product #preco #produto_preco > span:first-child {
+	display: none;
+}
+
+.page-product #preco .PrecoPrincipal {
+	font-family: "Franklingothic-Demi", sans-serif;
+	font-size: 25px;
+	color: #2f2f2f;
+    line-height: 30px;
+    height: auto;
+}
+
+.page-product #info_preco {
+	color: #a1a1a1;
+	font-family: "Franklingothic-Book", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.page-product #info_preco strong {
+	font-weight: 400;
+}
+
+.page-product #quantidade {
+	display: none;
+}
+
+.page-product #button-buy {
+	padding: 0;
+}
+
+.page-product .product-details .Medidas {
+	color: #6d6d6d;
+	display: block;
+	margin: -15px 0 25px 0;
+}
+
+.page-product .texto_variacao h2,
+.page-product .onVar, .page-product .onVar:hover {
+	font-family: "Franklingothic-Demi", sans-serif;
+	font-size: 16px;
+	color: #2f2f2f;
+	text-transform: lowercase;
+	margin: 10px 0;
+}
+
+.page-product .news-full-newsletter,
+.page-product footer {
+	display: none;
+}
+
+.page-product .lista_cor_variacao, .page-product .lista_cor_variacao2 {
+	margin-top: 5px;
+}
+
+.page-product #product-gallery figure img {
+	max-height: 90vh;
+}
+
+.page-product .product-colum-right {
+	padding-top: 5vh
+}
+
+
+/* Páginas Institucionas */
+
+.board_htm {
+	font-size: 11px;
+	font-family: "Franklingothic-Book", sans-serif;
+	line-height: 1.2;
+}
+
+.page-content .container.page-custom {
+	padding-top: 10vh;
+}
+
+.page-content .container.page-custom > h1:first-child {
+	margin-bottom: 5vh;
+	text-transform: lowercase;
+	font-family: "Franklingothic-Demi", sans-serif;
+}
+
+.page-content .container.page-custom .board_htm {
+	letter-spacing: 1px;
 }

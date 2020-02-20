@@ -16,12 +16,19 @@
                 {% if porcentagemDesconto < 100 %}
                   <span class="discount"> {{ porcentagemDesconto|number_format }}% de desconto </span>
                 {% endif %}  
-            {% endif %}             
+            {% endif %}
+
+            <div class="shop-now">
+                <figure>
+                    <img src="{{ asset('img/shop-now-white.png') }}" alt="shop-now - {{ store.name }}" title="shop-now - {{ store.name }}">
+                </figure>
+            </div>
+                         
         </div>
     
         <div class="product-name" itemprop="name">{{ product.name }}</div>
 
-         <meta itemprop="productID" content="{{ product.id }}"/>
+        <meta itemprop="productID" content="{{ product.id }}"/>
         <meta itemprop="sku" content="{{ product.id }}"/>
         {% if product.ean %}
             <meta itemprop="gtin14" content="{{ product.ean }}">

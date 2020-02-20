@@ -42,11 +42,16 @@
         <main class="site-main">
             <div class="col-sm-12">
                 <section class="page-content col-sm-12">
-                    {% if pages.current in ['catalog'] %}
-                        <div class="container">
+                    {% if pages.current in ['catalog'] or pages.custom %}
+                        <div class="container {{ pages.custom ? 'page-custom' : ''}}">
                     {% endif %}
+                        {% for custom in pages.custom %}
+                            {% if custom.slug == pages.current %}
+                            <h1>{{ custom.name }}</h1>
+                            {% endif %}
+                        {% endfor %}
                         {{ content_for_layout }}
-                    {% if pages.current in ['catalog'] %}
+                    {% if pages.current in ['catalog'] or pages.custom %}
                         </div>
                     {% endif %}
                 </section>
