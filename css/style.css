@@ -93,6 +93,14 @@ header .search form {
 	margin: 0;
 }
 
+header .search .search-button {
+	height: auto;
+	font-family: "Franklingothic-Book", sans-serif;
+	font-size: 14px;
+    top: 18px;
+    position: inherit;
+}
+
 header .cart .cart-icon svg {
 	top: 2px;
 	position: relative;

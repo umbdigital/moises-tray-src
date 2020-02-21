@@ -42,7 +42,7 @@
         <main class="site-main">
             <div class="col-sm-12">
                 <section class="page-content col-sm-12">
-                    {% if pages.current in ['catalog'] or pages.custom %}
+                    {% if pages.current in ['catalog'] or pages.custom and pages.current != 'home' %}
                         <div class="container {{ pages.custom ? 'page-custom' : ''}}">
                     {% endif %}
                         {% for custom in pages.custom %}
@@ -51,7 +51,7 @@
                             {% endif %}
                         {% endfor %}
                         {{ content_for_layout }}
-                    {% if pages.current in ['catalog'] or pages.custom %}
+                    {% if pages.current in ['catalog'] or pages.custom and pages.current != 'home' %}
                         </div>
                     {% endif %}
                 </section>
