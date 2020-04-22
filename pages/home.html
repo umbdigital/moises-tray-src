@@ -57,17 +57,19 @@
 {# % element 'snippets/banner-home' % #}
 
 <section class="banner-principal row">
-    <a href="{{ links.search_new }}" alt="Lançamentos - {{ store.name }}">
-        {% if not utils.is_mobile and banner.extra1 %}
+    {% if not utils.is_mobile and banner.extra1 %}
+    <a href="{{ links.home }}{{ banners.extra1.alt }}" alt="Lançamentos - {{ store.name }}">
         <figure>
-            <img src="{{ banners.extra1.src }}" alt="{{ banners.extra1.alt }} - {{ store.name }}">
+            <img src="{{ banners.extra1.src }}" alt="Banner Principal - {{ store.name }}">
         </figure>
-        {% else %}
+    </a>
+    {% else %}
+    <a href="{{ links.search_new }}" alt="Lançamentos - {{ store.name }}">
         <figure>
             <img src="{{ asset('img/banner-principal-home.jpg') }}" alt="Banner Principal Home Moises Arts">
         </figure>
-        {% endif %}
     </a>
+    {% endif %}
 </section>
 
 
@@ -140,17 +142,6 @@
 
 
 
-
-<!--banner regua -->
-{% if not utils.is_mobile and banner.extra1 %}
-    <div class="banner banner-ruler">
-        {{ banner.extra1 }}
-    </div>
-{% elseif utils.is_mobile and banner.extra8 %}
-    <div class="banner banner-ruler">
-        {{ banner.extra8 }}
-    </div>
-{% endif %}
 
 {% if banner.bottom %}
     <div class="banner banner-bottom ">
