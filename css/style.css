@@ -438,8 +438,11 @@ header .header-search {
 
 header .header-menu li {
 	padding: 15px 0;
+	line-height: 1.4;
+	max-width: 250px;
 }
 
+header .header-menu li span,
 header .header-menu li a {
 	font-family: "Franklingothic-Book", sans-serif;
 	font-size: 17px;
@@ -518,6 +521,9 @@ header #content-search .search-key {
 	header .header-menu {
 		display: none;
 	}
+	header .search .search-button {
+		top: 7px;
+	}
 }
 
 /* Menu Mobile */
@@ -547,6 +553,11 @@ html.menu-open .menu-mobile-backdrop {
 
 .menu-mobile .item-level1 {
 	border: none;
+}
+
+.menu-mobile .item-level1 span {
+	display: inline-flex;
+	align-items: center;
 }
 
 .menu-mobile>h5:after {

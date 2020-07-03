@@ -89,19 +89,35 @@
                 <nav>
                     <ul class="categories-mobile level1">
                         <li class="item-level1">
+                            <span class="tray-hide" data-logged-user="true">
+                                {{ Translation('bem_vindo_central') }} <span data-customer="name"></span>,
+                                <a class="link-level1" href="{{ links.logout }}">{{ Translation('sair') }}</a>
+                            </span>
+                            <span class="tray-hide" data-logged-user="false">
+                                <a class="link-level1" href="{{ links.login }}" data-tray-tst="login" class="{{ utils.is_https ? 'modal-login' }}">Entrar</a> / <a class="link-level1" href="{{ links.register }}" data-tray-tst="cadastro">{{ Translation('cadastre_se') }}</a>
+                            </span>
+                        </li>
+                        <li class="tray-hide" data-logged-user="true">
+                            <a href="{{ links.orders }}" data-tray-tst="meus_pedidos">{{ Translation('meus_pedidos') }}</a>
+                        </li>
+                    </ul>
+                    <ul class="categories-mobile level1">
+                        <li class="item-level1">
                             <a href="{{ links.home }}" class="link-level1" data-tray-tst="categoria_lvl_1">home</a>
                         </li>
                         {% for level1 in categories %}
                             {% if loop.index <= limit or not limit %}
-                                <li class="item-level1">
+                                
                                     {% if level1.children %}
-                                    <input type="checkbox" id="item-{{ level1.id }}" class="level1-check"/>
+                                    <!--<input type="checkbox" id="item-{{ level1.id }}" class="level1-check"/>
                                     <label class="link-level1" for="mobile-item-{{ level1.id }}" data-tray-tst="categoria_lvl_1">
                                         <i class="pull-right arrow-menu-mobile"><img src="{{ asset('img/arrow-right.svg') }}" height="16" width="16" alt="Seta"></i>
                                         {{ level1.name }}
-                                    </label>
+                                    </label>-->
                                     {% else %}
-                                    <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                                    <li class="item-level1">
+                                        <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                                    </li>
                                     {% endif %}
                                     
                                     {% if level1.children %}
@@ -128,7 +144,7 @@
                                             </ul>
                                         </div>
                                     {% endif %}
-                                </li>
+
                             {% endif %}
                         {% endfor %}
                     </ul>
